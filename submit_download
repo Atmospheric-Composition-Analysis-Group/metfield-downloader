@@ -33,7 +33,7 @@ echo """#!/bin/sh
 #BSUB -q general
 #BSUB -g /liam.bindle/downloads
 #BSUB -a 'docker(inutano/wget)'
-#BSUB -J "Download ..."
+#BSUB -J "Download"
 #BSUB -o $JOB_PATH/output.txt
 #BSUB -Ne
 #BSUB -u liam.bindle@wustl.edu
