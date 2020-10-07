@@ -1,0 +1,23 @@
+#!/bin/bash
+set -e
+set -u
+
+# Load variables in CONF_FILE
+CONF_FILE=$1
+source $CONF_FILE
+
+# Assert required variables are loaded
+: "$YEAR" "$MONTH" "$WORKINGDIR" "$WGET_OPTIONS"
+
+# Export download settings
+export WORKINGDIR=$WORKINGDIR
+export WGET_OPTIONS="$WGET_OPTIONS"
+
+# Get URL list
+URLS=$(YEAR=$YEAR MONTH=$MONTH $(dirname $CONF_FILE)/get_urls.sh)
+
+# Make sure working dir exists
+mkdir -p $WORKINGDIR
+
+# Launch download
+./launch_download - <(echo "$URLS")
