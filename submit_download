@@ -34,9 +34,9 @@ echo """#!/bin/sh
 #BSUB -g /liam.bindle/downloads
 #BSUB -a 'docker(inutano/wget)'
 #BSUB -J "Download"
-#BSUB -o $JOB_PATH/output.txt
 #BSUB -Ne
 #BSUB -u liam.bindle@wustl.edu
+#BSUB -o $JOB_PATH/output.txt
 
 set -e
 
