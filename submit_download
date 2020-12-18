@@ -5,7 +5,7 @@ set -u
 # Source CONF_FILE and make sure WORKINGDIR and WGET_OPTIONS are defined
 CONF_FILE=$1
 [ "$CONF_FILE" = "-" ] || source $CONF_FILE
-: "$WORKINGDIR" "$WGET_OPTIONS"
+: "$WORKINGDIR" "$WGET_OPTIONS" "$NAME"
 
 # Load WGET_URLS from file or stdin (-)
 WGET_URLS=$(cat $2)
@@ -33,7 +33,7 @@ echo """#!/bin/sh
 #BSUB -q general
 #BSUB -g /liam.bindle/downloads
 #BSUB -a 'docker(inutano/wget)'
-#BSUB -J "Download"
+#BSUB -J "Download$NAME"
 #BSUB -Ne
 #BSUB -u liam.bindle@wustl.edu
 #BSUB -o $JOB_PATH/output.txt

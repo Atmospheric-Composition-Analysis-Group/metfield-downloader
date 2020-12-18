@@ -3,3 +3,4 @@ YEAR=${YEAR:=$(date --date='-2 month' +%Y)}
 MONTH=${MONTH:=$(date --date='-2 month' +%m)}
 WORKINGDIR=/storage1/fs1/rvmartin/Active/GEOS-Chem-shared/MetFieldProcessing/MERRA2-raw/$YEAR/$MONTH
 WGET_OPTIONS="--load-cookies $HOME/.urs_cookies --save-cookies $HOME/.urs_cookies --auth-no-challenge=on --keep-session-cookies --content-disposition"
+NAME="MERRA2"

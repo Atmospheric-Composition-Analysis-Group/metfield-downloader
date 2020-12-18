@@ -3,3 +3,4 @@ YEAR=${YEAR:=$(date --date='-1 month' +%Y)}
 MONTH=${MONTH:=$(date --date='-1 month' +%m)}
 WORKINGDIR=/storage1/fs1/rvmartin/Active/GEOS-Chem-shared/MetFieldProcessing/GEOS_FP-raw/$YEAR/$MONTH
 WGET_OPTIONS='-c -nH --cut-dirs=7 -np -nv'
+NAME="GEOSFP"
